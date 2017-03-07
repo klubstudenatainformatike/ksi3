@@ -8,8 +8,8 @@ class App {
 
 
 
-	public function __construct() {
-		$url = $this->parseUrl();
+	public function __construct($u) {
+		$url = $this->parseUrl($u);
 		
 
 		if(file_exists("../app/controllers/".$url[0].".php")) {
@@ -31,9 +31,9 @@ class App {
 		call_user_func_array([$this->controller, $this->method], $this->params);
 	}
 
-	public function parseUrl() {
-		if(isset($_GET['url'])) {
-			return $url =  explode('/', filter_var(rtrim($_GET['url'], '/'), FILTER_SANITIZE_URL));
+	public function parseUrl($u) {
+		if(isset($u)) {
+			return $url =  explode('/', filter_var(rtrim($u, '/'), FILTER_SANITIZE_URL));
 		}
 	}
 }
