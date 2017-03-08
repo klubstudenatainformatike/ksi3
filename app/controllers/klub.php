@@ -1,5 +1,5 @@
 <?php 
-
+require_once "/var/www/html/mvc/app/models/activities.php"; // ipsraviti da koristi autoloader
 	class Klub extends Controller {
 
 		public function index($name = '') {
@@ -8,21 +8,28 @@
 
 
 		public function create(){
-			User::create(['username' => 'bob3', 'email' => 'bob444@mail.com','password' => '123']);
+			User::create(['username' => 'bob233', 'email' => 'bob44321314@mail.com','password' => '123']);
 			echo  'User created!<br>';
 		}
 
-		public function aktivnosti($predlog=null) {
-			if($predlog !== null && $_SERVER['REQUEST_METHOD'] === 'POST') {
-				if(!empty($_POST['tema']) && !empty($_POST['opis'])) {
-					$tema = htmlspecialchars($_POST['tema']);
-					$opis = htmlspecialchars($_POST['opis']);
-					Aktivnost::create(["tema" => $tema, "opis" => $opis]);
-					echo "Aktivnosti sacuvana";
+		public function aktivnosti($param=null) {
+			if($param === 'predlozi' && $_SERVER['REQUEST_METHOD'] === 'POST') {
+				if(!empty($_POST['subject']) && !empty($_POST['description'])) {
+					$subject = htmlspecialchars($_POST['subject']);
+					$description = htmlspecialchars($_POST['description']);
+					Activity::create(["subject" => $subject, "description" => $description]);
+					echo "Aktivnost sacuvana!"; // srediti redirect
 				}
-			} else {
-				$this->view('klub/aktivnosti');
+			} else if($param === null) {
+				$posts = Activity::all();
+				
+				$this->view('klub/aktivnosti', ['posts' => $posts]);
+			} else if(is_numeric($param)){
+				$post = Activity::find((int)$param);	
+				echo "<pre>" . $post . "</pre>";
+				$this->view('klub/aktivnosti', ['post' => $post]);
 			}
+		
 		}
 
 		public function projekti() {

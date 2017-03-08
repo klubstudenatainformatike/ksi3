@@ -10,7 +10,9 @@ class App {
 
 	public function __construct($u) {
 		$url = $this->parseUrl($u);
-		unset($url[0]);
+		unset($url[0]); // ovo je zbor fallbackresource, jer je prvi element niza prazan, pa ga brisemo, ali se ovo treba srediti...
+
+
 		if(file_exists("../app/controllers/".$url[1].".php")) {
 			$this->controller = $url[1];
 			unset($url[1]);
@@ -27,7 +29,6 @@ class App {
 			}
 		}
 		$this->params = $url ? array_values($url) : []; // rebase paramateres
-		print_r($this->params);
 		call_user_func_array([$this->controller, $this->method], $this->params);
 	}
 
