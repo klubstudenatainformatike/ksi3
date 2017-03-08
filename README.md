@@ -23,13 +23,13 @@ $ mysql -u <ime> -p ksi < ksi.sql
 ```
 
 ## TODO
-- [x] dodati korisnike, registracija i logovanje, povezati to sa aktivnostima
-- [x] lepse srediti konfiguraciju
-- [x] ispisati tekst za pocetnu stranu, o klubu, staviti linkove za chat itd.
-- [x] srediti css, forme, meni, responsive
-- [x] srediti redirect na /klub/aktivnosti kada se okaci aktivnost, trenutno samo ispisuje neki bezveze tekst
-- [x] doraditi uputsvo za instalciju 
-- [x] srediti konfiguraciju, glavni url, podaci za bazu..
+- [ ] dodati korisnike, registracija i logovanje, povezati to sa aktivnostima
+- [ ] lepse srediti konfiguraciju
+- [ ] ispisati tekst za pocetnu stranu, o klubu, staviti linkove za chat itd.
+- [ ] srediti css, forme, meni, responsive
+- [ ] srediti redirect na /klub/aktivnosti kada se okaci aktivnost, trenutno samo ispisuje neki bezveze tekst
+- [ ] doraditi uputsvo za instalciju 
+- [ ] srediti konfiguraciju, glavni url, podaci za bazu..
  
 ## Tehnologije
 Tehnologije koje se koriste su PHP, HTML, CSS i JavaScript. Ukoliko niste upoznati sa nekom od njih, evo par resursa za njihovo ucenje: 
