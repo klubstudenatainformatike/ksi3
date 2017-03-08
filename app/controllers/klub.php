@@ -7,21 +7,22 @@
 		}
 
 
-		/*public function create(){
-			if($_SERVER['REQUEST_METHOD'] === 'POST') {
-			User::create(['username' => $name, 'email' => $email,'password' => $pass]);
+		public function create(){
+			User::create(['username' => 'bob3', 'email' => 'bob444@mail.com','password' => '123']);
 			echo  'User created!<br>';
-			echo  $name . '<br>';
-			echo  $email . '<br>';
-			echo  $pass . '<br>';
-			} else {
-				echo "Error!";
-				die();
-			}
-		}*/
+		}
 
-		public function aktivnosti() {
-			$this->view('klub/aktivnosti');
+		public function aktivnosti($predlog=null) {
+			if($predlog !== null && $_SERVER['REQUEST_METHOD'] === 'POST') {
+				if(!empty($_POST['tema']) && !empty($_POST['opis'])) {
+					$tema = htmlspecialchars($_POST['tema']);
+					$opis = htmlspecialchars($_POST['opis']);
+					Aktivnost::create(["tema" => $tema, "opis" => $opis]);
+					echo "Aktivnosti sacuvana";
+				}
+			} else {
+				$this->view('klub/aktivnosti');
+			}
 		}
 
 		public function projekti() {
