@@ -1,0 +1,139 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+body {
+	margin: 20px auto;
+	width: 80%;
+	font-size: 110%;
+}
+
+header {
+	margin: auto;
+}
+
+header p {
+  margin-left: 10px;
+}
+
+h1 {
+	color: #127AC4;
+	font-size: 150%;
+	margin: 10px auto;
+	text-align: center;
+}
+
+ul li {
+	display: inline-block;
+	padding: 12px;
+}
+
+ul {
+	margin:auto;
+	text-align: center;
+	padding: 0px;
+}
+
+
+a:active, a:visited, a:link {
+	text-decoration: none;
+	color:#7C777D;
+}
+
+a:hover {
+	color:#127AC4;
+}
+
+footer {
+	overflow: hidden;
+	padding: 8px;
+    background: #127AC4; /* For browsers that do not support gradients */
+ 	background: -webkit-linear-gradient(left,#a2dbf2 ,#127AC4); /* For Safari 5.1 to 6.0 */
+  	background: -o-linear-gradient(right,#a2dbf2,#127AC4); /* For Opera 11.1 to 12.0 */
+  	background: -moz-linear-gradient(right, #a2dbf2, #127AC4); /* For Firefox 3.6 to 15 */
+  	background: linear-gradient(to right,#a2dbf2, #127AC4); /* Standard syntax */
+}
+
+footer img {
+	float: right;
+}
+
+.clear_float {
+	clear:both;
+}
+
+
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  opacity: 0.75;
+}
+
+ul.topnav li { text-align: center;}
+
+ul.topnav li a {
+  display: inline-block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 12px;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+ul.topnav li a:hover {background-color: #555;}
+
+ul.topnav li.icon {display: none;}
+
+ul.topnav li#meni {
+  display: none;
+}
+
+
+@media screen and (min-width:900px) and (max-width: 1200px) {
+	body {
+		width: 95%;
+	}
+
+	ul.topnav li a {
+		padding: 14px 10px;
+	}
+
+  
+}
+
+
+@media screen and (max-width:900px) {
+  body {
+        width: 100%;
+    }
+
+  ul.topnav li:not(:first-child) {display: none;}
+  ul.topnav li.icon {
+    float: right;
+    display: inline-block;
+  }
+
+  ul.topnav li { float:left;}
+
+  ul.topnav.responsive {position: relative;}
+  ul.topnav.responsive li.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  ul.topnav.responsive li {
+    float: none;
+    display: inline;
+  }
+  ul.topnav.responsive li a {
+    display: block;
+    text-align: left;
+  }
+
+  ul.topnav li#meni {
+    display: block;
+    text-align: left;
+  }
+}
+

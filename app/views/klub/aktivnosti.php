@@ -1,1 +1,0 @@
-//TODO lista aktivnosti, predlozi aktivnost
